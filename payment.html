@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Gateway - Ikon Computer Institute</title>
+    <meta name="description" content="Pay your course fees securely at Ikon Computer Education & Training Institute via Cash, Debit Card, or UPI.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+    <div class="glow-bg"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="scrolled">
+        <a href="index.html" class="logo gradient-text">IKON</a>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html#hero">Home</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#courses">Courses</a></li>
+            <li><a href="index.html#specialized">Specialized Coaching</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="admission.html" style="color:var(--accent-cyan);font-weight:600;">Online Admission</a></li>
+            <li><a href="payment.html" style="color:#a855f7;font-weight:600;">Payment</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="pay-hero reveal">
+        <div class="pay-hero-badge"><i class="fas fa-lock"></i> 100% Secure</div>
+        <h1>Payment <span class="gradient-text">Gateway</span></h1>
+        <p>Complete your course fee payment quickly and securely using your preferred method.</p>
+    </section>
+
+    <!-- Main Payment Area -->
+    <section class="pay-section">
+
+        <!-- Order Summary -->
+        <div class="pay-layout">
+            <div class="order-summary reveal">
+                <h3><i class="fas fa-receipt"></i> Order Summary</h3>
+                <div class="order-item">
+                    <span>Student Name</span>
+                    <strong id="summaryName">—</strong>
+                </div>
+                <div class="order-item">
+                    <span>Course Selected</span>
+                    <strong id="summaryCourse">—</strong>
+                </div>
+                <div class="order-item">
+                    <span>Payment Method</span>
+                    <strong id="summaryMethod">—</strong>
+                </div>
+                <div class="order-divider"></div>
+                <div class="order-item total-row">
+                    <span>Amount to Pay</span>
+                    <strong id="summaryAmount">₹ 0.00</strong>
+                </div>
+                <div class="secure-badges">
+                    <span><i class="fab fa-cc-visa"></i></span>
+                    <span><i class="fab fa-cc-mastercard"></i></span>
+                    <span><i class="fas fa-university"></i></span>
+                    <span><i class="fas fa-shield-alt"></i></span>
+                </div>
+            </div>
+
+            <!-- Payment Card -->
+            <div class="pay-card-wrapper reveal reveal-delay-1">
+                <!-- Details Row -->
+                <div class="pay-details-row">
+                    <div class="pay-detail-group">
+                        <label for="payStudentName">Student Name *</label>
+                        <div class="pay-input-wrap">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="payStudentName" placeholder="Enter your full name">
+                        </div>
+                    </div>
+                    <div class="pay-detail-group">
+                        <label for="payCourse">Course *</label>
+                        <div class="pay-input-wrap">
+                            <i class="fas fa-book"></i>
+                            <select id="payCourse">
+                                <option value="" disabled selected>Select course</option>
+                                <option value="Fundamental Course">Fundamental Course</option>
+                                <option value="Advanced Multimedia Course">Advanced Multimedia Course</option>
+                                <option value="Softpack for Madhyamic Student">Softpack for Madhyamic Student</option>
+                                <option value="New Dimension for H.S. Student">New Dimension for H.S. Student</option>
+                                <option value="Swift Academic Course">Swift Academic Course</option>
+                                <option value="Desktop Publishing (D.T.P)">Desktop Publishing (D.T.P)</option>
+                                <option value="Advanced Programming Course">Advanced Programming Course</option>
+                                <option value="AIML Course">AIML Course</option>
+                                <option value="Advanced MS Excel + PowerBI">Advanced MS Excel + PowerBI</option>
+                                <option value="Computer Application & Science">Computer Application & Science</option>
+                                <option value="F.A Course">F.A Course</option>
+                                <option value="Web Technology Foundation">Web Technology Foundation</option>
+                                <option value="Office Automation Course">Office Automation Course</option>
+                                <option value="Digital Marketing">Digital Marketing</option>
+                                <option value="Specialized Coaching">Specialized Coaching</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="pay-detail-group">
+                        <label for="payAmount">Amount (₹) *</label>
+                        <div class="pay-input-wrap">
+                            <i class="fas fa-rupee-sign"></i>
+                            <input type="number" id="payAmount" placeholder="Enter amount" min="1">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Method Tabs -->
+                <div class="pay-tabs">
+                    <button class="pay-tab active" id="tabCash" data-method="cash">
+                        <i class="fas fa-money-bill-wave"></i> Cash
+                    </button>
+                    <button class="pay-tab" id="tabDebit" data-method="debit">
+                        <i class="fas fa-credit-card"></i> Debit Card
+                    </button>
+                    <button class="pay-tab" id="tabUPI" data-method="upi">
+                        <i class="fas fa-mobile-alt"></i> UPI
+                    </button>
+                </div>
+
+                <!-- ===== CASH PANEL ===== -->
+                <div class="pay-panel active" id="panelCash">
+                    <div class="cash-info">
+                        <div class="cash-icon-wrap">
+                            <i class="fas fa-hand-holding-usd"></i>
+                        </div>
+                        <h3>Pay at the Institute</h3>
+                        <p>Visit the Ikon Computer Education & Training Institute during working hours and complete your payment in cash at the reception desk.</p>
+                        <div class="cash-meta">
+                            <div class="cash-meta-item">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <strong>Working Hours</strong>
+                                    <span>Mon – Sat: 9:00 AM – 7:00 PM</span>
+                                </div>
+                            </div>
+                            <div class="cash-meta-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <strong>Address</strong>
+                                    <span>29, Karbala Tank Lane, Kolkata-700006</span>
+                                </div>
+                            </div>
+                            <div class="cash-meta-item">
+                                <i class="fas fa-phone-alt"></i>
+                                <div>
+                                    <strong>Contact Before Visit</strong>
+                                    <span>8240159300 / 9836930592</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="pay-btn" id="btnCash">
+                            <i class="fas fa-ticket-alt"></i> Generate Receipt Token
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ===== DEBIT CARD PANEL ===== -->
+                <div class="pay-panel" id="panelDebit">
+                    <!-- 3D Card Flip Visual -->
+                    <div class="card-scene">
+                        <div class="card-3d" id="card3d">
+                            <div class="card-front">
+                                <div class="card-chip"><i class="fas fa-microchip"></i></div>
+                                <div class="card-logo gradient-text">IKON PAY</div>
+                                <div class="card-number" id="cardDisplayNumber">•••• •••• •••• ••••</div>
+                                <div class="card-bottom-row">
+                                    <div>
+                                        <div class="card-label">Card Holder</div>
+                                        <div class="card-value" id="cardDisplayName">FULL NAME</div>
+                                    </div>
+                                    <div>
+                                        <div class="card-label">Expires</div>
+                                        <div class="card-value" id="cardDisplayExpiry">MM/YY</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <div class="card-strip"></div>
+                                <div class="cvv-row">
+                                    <div class="cvv-label">CVV</div>
+                                    <div class="cvv-box" id="cardDisplayCVV">•••</div>
+                                </div>
+                                <div class="card-back-logo gradient-text">IKON PAY</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="debit-form">
+                        <div class="debit-field">
+                            <label for="cardHolder">Cardholder Name</label>
+                            <div class="pay-input-wrap">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="cardHolder" placeholder="Name on card" autocomplete="cc-name">
+                            </div>
+                        </div>
+                        <div class="debit-field">
+                            <label for="cardNumber">Card Number</label>
+                            <div class="pay-input-wrap">
+                                <i class="fas fa-credit-card"></i>
+                                <input type="text" id="cardNumber" placeholder="0000 0000 0000 0000" maxlength="19" autocomplete="cc-number">
+                            </div>
+                        </div>
+                        <div class="debit-row">
+                            <div class="debit-field">
+                                <label for="cardExpiry">Expiry Date</label>
+                                <div class="pay-input-wrap">
+                                    <i class="far fa-calendar-alt"></i>
+                                    <input type="text" id="cardExpiry" placeholder="MM/YY" maxlength="5" autocomplete="cc-exp">
+                                </div>
+                            </div>
+                            <div class="debit-field">
+                                <label for="cardCVV">CVV</label>
+                                <div class="pay-input-wrap">
+                                    <i class="fas fa-lock"></i>
+                                    <input type="password" id="cardCVV" placeholder="•••" maxlength="3" autocomplete="cc-csc">
+                                </div>
+                            </div>
+                        </div>
+                        <button class="pay-btn" id="btnDebit">
+                            <i class="fas fa-lock"></i> Pay Securely
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ===== UPI PANEL ===== -->
+                <div class="pay-panel" id="panelUPI">
+                    <div class="upi-layout">
+                        <div class="upi-left">
+                            <h3>Scan QR Code</h3>
+                            <div class="qr-container">
+                                <div class="qr-inner">
+                                    <img src="upi-qr.jpg" alt="UPI QR Code – myikon2016-3@okaxis" class="qr-img">
+                                </div>
+                                <p class="qr-merchant">myikon2016-3@okaxis</p>
+                            </div>
+                            <div class="upi-apps">
+                                <span class="upi-app"><i class="fas fa-circle-dot" style="color:#5A37E0"></i> PhonePe</span>
+                                <span class="upi-app"><i class="fas fa-circle-dot" style="color:#00B9F1"></i> Paytm</span>
+                                <span class="upi-app"><i class="fas fa-circle-dot" style="color:#3D7EFF"></i> Google Pay</span>
+                                <span class="upi-app"><i class="fas fa-circle-dot" style="color:#FF6B00"></i> BHIM</span>
+                            </div>
+                        </div>
+                        <div class="upi-divider"><span>OR</span></div>
+                        <div class="upi-right">
+                            <h3>Enter UPI ID</h3>
+                            <div class="debit-field">
+                                <label for="upiId">UPI ID / VPA</label>
+                                <div class="pay-input-wrap">
+                                    <i class="fas fa-at"></i>
+                                    <input type="text" id="upiId" placeholder="e.g. yourname@ybl">
+                                </div>
+                            </div>
+                            <div class="upi-id-display">
+                                <span>Pay To:</span>
+                                <strong>myikon2016-3@okaxis</strong>
+                            </div>
+                            <button class="pay-btn" id="btnUPI">
+                                <i class="fas fa-paper-plane"></i> Verify & Pay
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Payment History -->
+        <div class="history-section reveal">
+            <div class="history-header">
+                <h3><i class="fas fa-history"></i> Recent Payment Records</h3>
+                <button class="clear-btn" id="clearHistory"><i class="fas fa-trash-alt"></i> Clear All</button>
+            </div>
+            <div id="payHistoryList" class="history-list">
+                <div class="history-empty" id="historyEmpty">
+                    <i class="fas fa-inbox"></i>
+                    <p>No payment records yet.</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Payment Success Modal -->
+    <div class="modal-overlay" id="payModal">
+        <div class="modal-box">
+            <div class="modal-success-ring">
+                <i class="fas fa-check"></i>
+            </div>
+            <h2>Payment <span class="gradient-text">Successful!</span></h2>
+            <p id="modalMessage">Your payment has been processed successfully.</p>
+            <div class="receipt-box" id="receiptBox"></div>
+
+            <!-- WhatsApp Share Section -->
+            <div class="wa-section">
+                <div class="wa-section-label">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>Send receipt to candidate via WhatsApp</span>
+                </div>
+                <div class="wa-input-row">
+                    <div class="wa-phone-wrap">
+                        <span class="wa-cc">+91</span>
+                        <input type="tel" id="waPhone" maxlength="10" placeholder="Candidate's WhatsApp number">
+                    </div>
+                    <button class="wa-send-btn" id="btnWhatsApp">
+                        <i class="fab fa-whatsapp"></i> Send
+                    </button>
+                </div>
+                <p class="wa-note" id="waStatus"></p>
+            </div>
+
+            <div class="modal-actions">
+                <button class="pay-btn modal-print-btn" id="modalPrint">
+                    <i class="fas fa-print"></i> Print Receipt
+                </button>
+                <button class="pay-btn modal-close-btn" id="modalClose">
+                    <i class="fas fa-times-circle"></i> Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden Printable Receipt area (populated by JS) -->
+    <div id="printArea" style="display:none;"></div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid reveal">
+            <div class="footer-brand">
+                <p style="color: var(--text-muted); font-size: 0.95rem;">Empowering futures via top-tier academic &amp; professional computer training for 30 years.</p>
+            </div>
+            <div class="footer-contact-info">
+                <h3>Contact Info</h3>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                    <div class="contact-text">
+                        <strong>Cell:</strong><br>
+                        <a href="tel:8240159300">8240159300</a> / <a href="tel:9836930592">9836930592</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <div class="contact-text">
+                        <strong>Email:</strong><br>
+                        <a href="mailto:myikon2016@gmail.com">myikon2016@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Ikon Computer Education &amp; Training Institute. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script src="payment.js"></script>
+</body>
+</html>

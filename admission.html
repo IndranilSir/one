@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Admission - Ikon Computer Institute</title>
+    <meta name="description" content="Apply online for computer courses at Ikon Computer Education & Training Institute.">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background Glow Elements -->
+    <div class="glow-bg"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="scrolled">
+        <a href="index.html" class="logo gradient-text">IKON</a>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html#hero">Home</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#courses">Courses</a></li>
+            <li><a href="index.html#specialized">Specialized Coaching</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="admission.html" style="color: var(--accent-cyan); font-weight: 600;">Online Admission</a></li>
+            <li><a href="payment.html" style="color:#a855f7;font-weight:600;">Payment</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- Admission Section -->
+    <section class="admission-section" style="padding-top: calc(var(--nav-height) + 2rem); min-height: 100vh;">
+        <h2 class="reveal">Online <span class="gradient-text">Admission</span></h2>
+        <div class="admission-glass reveal reveal-delay-1">
+            <p class="form-intro">Fill out the form below to apply for your desired computer course. Our administrative team will review your application and get back to you shortly.</p>
+            
+            <form id="admissionForm" class="admission-form">
+                <!-- Personal Details -->
+                <div class="form-group-title">Personal Details</div>
+                <div class="form-row">
+                    <div class="input-container">
+                        <label for="fullName">Full Name *</label>
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" id="fullName" required placeholder="e.g. John Doe">
+                    </div>
+                    <div class="input-container">
+                        <label for="dob">Date of Birth *</label>
+                        <i class="fas fa-calendar-alt input-icon"></i>
+                        <input type="date" id="dob" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="input-container">
+                        <label for="email">Email Address *</label>
+                        <i class="fas fa-envelope input-icon"></i>
+                        <input type="email" id="email" required placeholder="e.g. john@example.com">
+                    </div>
+                    <div class="input-container">
+                        <label for="phone">Phone Number *</label>
+                        <i class="fas fa-phone-alt input-icon"></i>
+                        <input type="tel" id="phone" required placeholder="e.g. +91 9876543210">
+                    </div>
+                </div>
+
+                <!-- Academic & Course Details -->
+                <div class="form-group-title">Academic & Course Selection</div>
+                <div class="form-row">
+                    <div class="input-container">
+                        <label for="qualification">Highest Qualification *</label>
+                        <div class="select-wrapper">
+                            <i class="fas fa-graduation-cap input-icon"></i>
+                            <select id="qualification" required>
+                                <option value="" disabled selected>Select your qualification</option>
+                                <option value="Below 10th">Below 10th</option>
+                                <option value="10th Pass (Madhyamik)">10th Pass (Madhyamik)</option>
+                                <option value="12th Pass (H.S.)">12th Pass (H.S. or Equivalent)</option>
+                                <option value="Graduate">Graduate</option>
+                                <option value="Post Graduate">Post Graduate</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-container">
+                        <label for="course">Course Applying For *</label>
+                        <div class="select-wrapper">
+                            <i class="fas fa-laptop-code input-icon"></i>
+                            <select id="course" required>
+                                <option value="" disabled selected>Select a course</option>
+                                <option value="Fundamental Course">Fundamental Course (6 Months)</option>
+                                <option value="Advanced Multimedia Course">Advanced Multimedia Course (8 Months)</option>
+                                <option value="Softpack for Madhyamic Student">Softpack for Madhyamic Student (4 Months)</option>
+                                <option value="New Dimension for H.S. Student">New Dimension for H.S. Student (5 Months)</option>
+                                <option value="Swift Academic Course">Swift Academic Course (Class IX + X)</option>
+                                <option value="Desktop Publishing (D.T.P)">Desktop Publishing (D.T.P) (6 Months)</option>
+                                <option value="Advanced Programming Course">Advanced Programming Course (8 Months)</option>
+                                <option value="AIML Course">AIML Course (5 Months)</option>
+                                <option value="Advanced MS Excel + PowerBI">Advanced MS Excel + PowerBI (4 Months)</option>
+                                <option value="Computer Application & Science">Computer Application & Science (Academic Custom)</option>
+                                <option value="F.A Course">F.A Course (3 Months)</option>
+                                <option value="Web Technology Foundation">Web Technology Foundation (6 Months)</option>
+                                <option value="Office Automation Course">Office Automation Course (5 Months)</option>
+                                <option value="Digital Marketing">Digital Marketing (5 Months)</option>
+                                <option value="Specialized Coaching - University/B.Tech">Specialized Coaching - University/B.Tech/BCA</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-container full-width">
+                    <label for="address">Full Address *</label>
+                    <i class="fas fa-map-marker-alt input-icon text-area-icon"></i>
+                    <textarea id="address" rows="3" required placeholder="Enter your complete residential address..."></textarea>
+                </div>
+                
+                <div class="form-messages" id="formMessages"></div>
+
+                <div class="submit-container">
+                    <button type="submit" class="btn-primary form-submit-btn">
+                        <span>Submit Application</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                    <p class="privacy-note"><i class="fas fa-lock"></i> Your information is secure and encrypted.</p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer id="contact">
+        <div class="footer-grid reveal">
+            <div class="footer-brand">
+                <img src="images/ikonlogo.png" alt="Ikon Computer Education & Training Institute Logo" style="max-width: 160px; margin-bottom: 1.5rem; filter: drop-shadow(0 2px 15px rgba(0, 242, 254, 0.4));" onerror="this.src='images/logo.png'">
+                <p style="color: var(--text-muted); font-size: 0.95rem;">Empowering futures via top-tier academic & professional computer training for 30 years.</p>
+            </div>
+            <div class="footer-contact-info">
+                <h3>Contact Info</h3>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="contact-text">
+                        <strong>Address:</strong><br>
+                        29, Karbala Tank Lane, Kolkata-700006<br>
+                        (Near Punjab National Bank of India, Manicktala Branch)
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                    <div class="contact-text">
+                        <strong>Cell:</strong><br>
+                        <a href="tel:8240159300">8240159300</a> / <a href="tel:8100789377">8100789377</a> / <a href="tel:9836930592">9836930592</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <div class="contact-text">
+                        <strong>Email:</strong><br>
+                        <a href="mailto:pathakindra2006@gmail.com">pathakindra2006@gmail.com</a><br>
+                        <a href="mailto:myikon2016@gmail.com">myikon2016@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Ikon Computer Education & Training Institute. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>

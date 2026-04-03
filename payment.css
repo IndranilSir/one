@@ -1,0 +1,989 @@
+/* =========================================
+   PAYMENT GATEWAY - Dedicated Styles
+   Ikon Computer Education & Training Institute
+   ========================================= */
+
+/* ---- Hero ---- */
+.pay-hero {
+  padding-top: calc(var(--nav-height) + 3rem);
+  padding-bottom: 3rem;
+  text-align: center;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.pay-hero h1 {
+  font-size: 3.2rem;
+  font-family: 'Outfit', sans-serif;
+  margin-bottom: 1rem;
+}
+.pay-hero p {
+  color: var(--text-muted);
+  font-size: 1.15rem;
+  max-width: 540px;
+  margin: 0 auto;
+}
+.pay-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 242, 254, 0.08);
+  border: 1px solid rgba(0, 242, 254, 0.25);
+  color: var(--accent-cyan);
+  padding: 6px 18px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.5px;
+}
+
+/* ---- Layout ---- */
+.pay-section {
+  padding: 0 5% 6rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+.pay-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+/* ---- Order Summary ---- */
+.order-summary {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 2rem;
+  backdrop-filter: blur(16px);
+  position: sticky;
+  top: calc(var(--nav-height) + 2rem);
+}
+.order-summary h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent-cyan);
+}
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+.order-item span {
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+.order-item strong {
+  color: var(--text-main);
+  text-align: right;
+  word-break: break-all;
+  font-size: 0.9rem;
+}
+.order-divider {
+  height: 1px;
+  background: var(--glass-border);
+  margin: 1.2rem 0;
+}
+.total-row {
+  font-size: 1rem !important;
+}
+.total-row strong {
+  font-size: 1.4rem !important;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+.secure-badges {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 1.5rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--glass-border);
+  font-size: 1.8rem;
+  color: var(--text-muted);
+  opacity: 0.5;
+}
+
+/* ---- Pay Card Wrapper ---- */
+.pay-card-wrapper {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  padding: 2.5rem;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+}
+
+/* ---- Top Details Row ---- */
+.pay-details-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--glass-border);
+}
+.pay-detail-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.pay-detail-group label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+.pay-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.pay-input-wrap i {
+  position: absolute;
+  left: 14px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  transition: color 0.3s;
+  pointer-events: none;
+}
+.pay-input-wrap input,
+.pay-input-wrap select {
+  width: 100%;
+  background: rgba(10, 12, 16, 0.7);
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+  padding: 12px 12px 12px 40px;
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.3s ease;
+  appearance: none;
+}
+.pay-input-wrap input:focus,
+.pay-input-wrap select:focus {
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 12px rgba(0, 242, 254, 0.18);
+  background: rgba(15, 18, 25, 0.9);
+}
+.pay-input-wrap input:focus ~ i,
+.pay-input-wrap select:focus ~ i {
+  color: var(--accent-cyan);
+}
+
+/* ---- Tabs ---- */
+.pay-tabs {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+}
+.pay-tab {
+  flex: 1;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid var(--glass-border);
+  background: rgba(10, 12, 16, 0.5);
+  color: var(--text-muted);
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+.pay-tab:hover {
+  border-color: rgba(0, 242, 254, 0.3);
+  color: var(--text-main);
+}
+.pay-tab.active {
+  background: var(--gradient-primary);
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(0, 242, 254, 0.3);
+}
+
+/* ---- Panels ---- */
+.pay-panel {
+  display: none;
+  animation: fadeInUp 0.4s ease;
+}
+.pay-panel.active {
+  display: block;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---- Pay Button ---- */
+.pay-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 15px;
+  margin-top: 1.5rem;
+  border: none;
+  border-radius: 12px;
+  background: var(--gradient-primary);
+  color: #fff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  letter-spacing: 0.5px;
+}
+.pay-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 242, 254, 0.35);
+}
+.pay-btn:active {
+  transform: translateY(0);
+}
+
+/* =========================================
+   CASH PANEL
+   ========================================= */
+.cash-info {
+  text-align: center;
+  padding: 1rem 0;
+}
+.cash-icon-wrap {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(0,242,254,0.1), rgba(138,43,226,0.1));
+  border: 1px solid var(--glass-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 2rem;
+  color: var(--accent-cyan);
+}
+.cash-info h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+.cash-info > p {
+  color: var(--text-muted);
+  max-width: 480px;
+  margin: 0 auto 2rem;
+}
+.cash-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left;
+}
+.cash-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+}
+.cash-meta-item i {
+  font-size: 1.3rem;
+  color: var(--accent-cyan);
+  width: 28px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.cash-meta-item strong {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-main);
+  margin-bottom: 2px;
+}
+.cash-meta-item span {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* =========================================
+   DEBIT CARD PANEL — 3D Card
+   ========================================= */
+.card-scene {
+  perspective: 1000px;
+  width: 360px;
+  height: 200px;
+  margin: 0 auto 2rem;
+}
+.card-3d {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+.card-3d.flipped {
+  transform: rotateY(180deg);
+}
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  backface-visibility: hidden;
+  padding: 1.5rem;
+  overflow: hidden;
+}
+.card-front {
+  background: linear-gradient(135deg, #1a0533, #0d1f3c, #0a2a3a);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card-front::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,242,254,0.15), transparent);
+  pointer-events: none;
+}
+.card-chip {
+  width: 44px;
+  height: 34px;
+  background: linear-gradient(135deg, #d4a017, #f0c040);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(0,0,0,0.6);
+  font-size: 1.1rem;
+}
+.card-logo {
+  text-align: right;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+.card-number {
+  font-family: 'Courier New', monospace;
+  font-size: 1.25rem;
+  letter-spacing: 4px;
+  color: rgba(255,255,255,0.9);
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+.card-bottom-row {
+  display: flex;
+  justify-content: space-between;
+}
+.card-label {
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.45);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 3px;
+}
+.card-value {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.card-back {
+  background: linear-gradient(135deg, #0d1f3c, #1a0533);
+  border: 1px solid rgba(255,255,255,0.12);
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.card-strip {
+  height: 44px;
+  background: rgba(0,0,0,0.6);
+  margin: 0 -1.5rem;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+}
+.cvv-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 3.5rem;
+}
+.cvv-label {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.cvv-box {
+  background: #fff;
+  color: #000;
+  padding: 6px 18px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 1rem;
+  letter-spacing: 4px;
+}
+.card-back-logo {
+  text-align: right;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+.debit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.debit-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.debit-field label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+.debit-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+/* =========================================
+   UPI PANEL
+   ========================================= */
+.upi-layout {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+.upi-left, .upi-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.upi-left h3, .upi-right h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
+  align-self: flex-start;
+}
+.qr-container {
+  text-align: center;
+}
+.qr-inner {
+  position: relative;
+  width: 190px;
+  height: 190px;
+  border-radius: 16px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+  overflow: hidden;
+  padding: 8px;
+  margin: 0 auto;
+}
+.qr-svg {
+  width: 100%;
+  height: 100%;
+}
+.qr-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  display: block;
+}
+.qr-logo {
+  position: absolute;
+  background: #fff;
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.8rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.qr-merchant {
+  margin-top: 0.8rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-family: 'Courier New', monospace;
+}
+.upi-apps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.upi-app {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 5px 12px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+.upi-divider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.upi-divider::before, .upi-divider::after {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 80px;
+  background: var(--glass-border);
+}
+.upi-right {
+  align-items: flex-start;
+  width: 100%;
+}
+.upi-right .debit-field {
+  width: 100%;
+}
+.upi-id-display {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(0,242,254,0.06);
+  border: 1px solid rgba(0,242,254,0.2);
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  width: 100%;
+}
+.upi-id-display span {
+  color: var(--text-muted);
+}
+.upi-id-display strong {
+  color: var(--accent-cyan);
+  font-family: 'Courier New', monospace;
+}
+.upi-right .pay-btn {
+  margin-top: 1.2rem;
+}
+
+/* =========================================
+   Payment History
+   ========================================= */
+.history-section {
+  margin-top: 3rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 2rem;
+  backdrop-filter: blur(16px);
+}
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.history-header h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent-cyan);
+}
+.clear-btn {
+  background: rgba(231, 76, 60, 0.15);
+  border: 1px solid rgba(231, 76, 60, 0.3);
+  color: #e74c3c;
+  padding: 7px 14px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s;
+}
+.clear-btn:hover {
+  background: rgba(231, 76, 60, 0.3);
+}
+.history-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+.history-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+.history-empty i {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 0.8rem;
+  opacity: 0.4;
+}
+.pay-record {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--glass-border);
+  border-radius: 14px;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 0.4s ease;
+}
+.pay-record::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--gradient-primary);
+  border-radius: 4px 0 0 4px;
+}
+.pay-record-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.pay-record-name {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text-main);
+}
+.pay-record-amount {
+  font-size: 1.1rem;
+  font-weight: 700;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+.pay-record-course {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+.pay-record-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.3rem;
+}
+.pay-record-method {
+  font-size: 0.78rem;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.method-cash { background: rgba(46,204,113,0.15); color: #2ecc71; }
+.method-debit { background: rgba(52,152,219,0.15); color: #3498db; }
+.method-upi { background: rgba(155,89,182,0.15); color: #9b59b6; }
+.pay-record-date {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* =========================================
+   Success Modal
+   ========================================= */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(8px);
+  display: none;
+  align-items: flex-start;
+  justify-content: center;
+  z-index: 9999;
+  padding: 16px;
+  overflow-y: auto;
+}
+.modal-overlay.show {
+  display: flex;
+}
+.modal-box {
+  background: #0f1115;
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 1.6rem 1.8rem 1.4rem;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+  animation: modalPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  margin: auto;
+}
+@keyframes modalPop {
+  from { transform: scale(0.7); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+.modal-success-ring {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(0,242,254,0.15), rgba(138,43,226,0.15));
+  border: 2px solid var(--accent-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--accent-cyan);
+  margin: 0 auto 0.9rem;
+  animation: ringPulse 2s infinite;
+}
+@keyframes ringPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0,242,254,0.35); }
+  50% { box-shadow: 0 0 0 16px rgba(0,242,254,0); }
+}
+.modal-box h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.55rem;
+  margin-bottom: 0.3rem;
+  text-align: center;
+}
+.modal-box > p {
+  color: var(--text-muted);
+  margin-bottom: 0.9rem;
+  font-size: 0.85rem;
+}
+.receipt-box {
+  background: rgba(255,255,255,0.04);
+  border: 1px dashed var(--glass-border);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  text-align: left;
+  line-height: 1.75;
+  margin-bottom: 0.9rem;
+}
+.receipt-box strong {
+  color: var(--text-main);
+}
+
+/* Modal action buttons row */
+.modal-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0;
+}
+.modal-print-btn {
+  flex: 1;
+  margin-top: 0 !important;
+  background: linear-gradient(135deg, #00f2fe, #0070c0);
+  box-shadow: 0 8px 20px rgba(0, 112, 192, 0.35);
+}
+.modal-print-btn:hover {
+  box-shadow: 0 12px 28px rgba(0, 242, 254, 0.45);
+}
+.modal-close-btn {
+  flex: 1;
+  margin-top: 0 !important;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--glass-border);
+  color: var(--text-muted);
+}
+.modal-close-btn:hover {
+  background: rgba(255,255,255,0.1);
+  box-shadow: none;
+  transform: none;
+  color: var(--text-main);
+}
+
+/* =========================================
+   WhatsApp Share Section (inside modal)
+   ========================================= */
+.wa-section {
+  background: rgba(37, 211, 102, 0.06);
+  border: 1px solid rgba(37, 211, 102, 0.25);
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  margin-bottom: 0.9rem;
+  text-align: left;
+}
+.wa-section-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #25d366;
+  margin-bottom: 1rem;
+  letter-spacing: 0.2px;
+}
+.wa-section-label i {
+  font-size: 1.15rem;
+}
+.wa-input-row {
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+}
+.wa-phone-wrap {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  background: rgba(10, 12, 16, 0.7);
+  border: 1px solid rgba(37, 211, 102, 0.3);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.wa-phone-wrap:focus-within {
+  border-color: #25d366;
+  box-shadow: 0 0 12px rgba(37, 211, 102, 0.2);
+}
+.wa-cc {
+  padding: 0 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #25d366;
+  background: rgba(37, 211, 102, 0.08);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border-right: 1px solid rgba(37, 211, 102, 0.2);
+  white-space: nowrap;
+  line-height: 42px;
+}
+.wa-phone-wrap input {
+  border: none;
+  background: transparent;
+  outline: none;
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  padding: 10px 12px;
+  width: 100%;
+  letter-spacing: 0.5px;
+}
+.wa-phone-wrap input::placeholder {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+.wa-send-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: none;
+  background: #25d366;
+  color: #fff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+}
+.wa-send-btn i {
+  font-size: 1.1rem;
+}
+.wa-send-btn:hover {
+  background: #1ebe5c;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.45);
+}
+.wa-send-btn:active {
+  transform: translateY(0);
+}
+.wa-note {
+  margin-top: 0.7rem;
+  font-size: 0.82rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 1.2rem;
+}
+.wa-success {
+  color: #25d366;
+}
+.wa-error {
+  color: #e74c3c;
+}
+
+/* =========================================
+   Responsive
+   ========================================= */
+@media (max-width: 1024px) {
+  .pay-layout {
+    grid-template-columns: 1fr;
+  }
+  .order-summary {
+    position: static;
+    max-width: 100%;
+  }
+  .pay-details-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 768px) {
+  .pay-hero h1 { font-size: 2.2rem; }
+  .pay-details-row { grid-template-columns: 1fr; }
+  .upi-layout {
+    grid-template-columns: 1fr;
+  }
+  .upi-divider {
+    flex-direction: row;
+    width: 100%;
+  }
+  .upi-divider::before, .upi-divider::after {
+    width: 100%;
+    height: 1px;
+  }
+  .card-scene { width: 100%; }
+  .debit-row { grid-template-columns: 1fr 1fr; }
+}
